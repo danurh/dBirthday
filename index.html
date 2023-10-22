@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D'Birthday</title>
+    <link rel="website icon" type="png" href="img/icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            padding: {
+              sper: "7%",
+            },
+            colors: {
+              one: "#cb997e",
+              two: "rgba(221, 190, 169, 0.6)",
+              three: "#ffe8d6",
+              four: "#b7b7a4",
+            },
+            height: {
+              hp: "30rem",
+              hpn: "17rem",
+            },
+            position: {
+              rminf: "-100%",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .spacing {
+          letter-spacing: 2px;
+        }
+      }
+    </style>
+  </head>
+  <style>
+    #buttn:hover{
+      text-shadow: 
+      0 0 .25em #fff7,
+      0 0 .25em #10dce3;
+      box-shadow: 0 0 .3em #10dce3;
+      display: none;
+      cursor: none;
+    }
+    #butty:hover{
+      text-shadow: 
+      0 0 .25em #fff7,
+      0 0 .25em #10dce3;
+      transition: ease-in-out 0.2s;
+      box-shadow: 0 0 .3em #10dce3;
+    }
+    @media (max-width: 768px) {
+      #hamburger {
+        display: inline-block;
+      }
+      #navbar #navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -175%;
+        background-color: #ffe8d6;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.5 ease-in-out;
+      }
+      #navbar #navbar-nav a {
+        display: block;
+        margin: 0.5rem;
+        padding: 0.3rem;
+        font-size: 1.3rem;
+        transition: 0.5 ease-in-out;
+      }
+      #navbar #navbar-nav a::after {
+        transform-origin: 0 0;
+        transition: 0.5 ease-in-out;
+      }
+
+      #navbar #navbar-nav a:hover::after {
+        transform: scale(0.2);
+        transition: 0.5 ease-in-out;
+      }
+      #navbar #navbar-nav.active {
+        right: -100%;
+        transition: 0.5s ease-in-out;
+      }
+    }
+  </style>
+  <body
+    id="ctn"
+    class="bg-three text-white font-sans box-border container h-screen w-screen"
+  >
+    <nav
+      id="navbar"
+      class="flex justify-between items-center py-6 px-sper bg-two border-b-2 border-one fixed top-0 left-0 right-0 z-50"
+    >
+      <a
+        href="#content"
+        id="navbar-logo"
+        class="drop-shadow-lg text-3xl italic font-bold spacing font-serif text-white max-[768px]:text-2xl"
+        onclick="hClick()"
+        >d'Birth<span class="text-rose-500 font-extrabold">day</span>.</a
+      >
+      <div id="navbar-nav">
+        <a
+          id="nv"
+          href="#home"
+          class="inline-block text-white text-xl my-0 mx-4 after:block after:pb-2 after:border-b-2 after:border-black after:scale-0 after:transition-all hover:after:scale-75"
+          onclick="hClick()"
+          >Home</a
+        >
+        <!-- <a
+          id="nv"
+          href="#pictures"
+          class="inline-block text-white text-xl my-0 mx-4 after:block after:pb-2 after:border-b-2 after:border-black after:scale-0 after:transition-all hover:after:scale-75"
+          onclick="pClick()"
+          >Pictures</a
+        > -->
+        <a
+          id="nv"
+          href="#song"
+          class="inline-block text-white text-xl my-0 mx-4 after:block after:pb-2 after:border-b-2 after:border-black after:scale-0 after:transition-all hover:after:scale-75"
+          onclick="sClick()"
+          >Song</a
+        >
+        <a
+          id="nv"
+          href="#surprise"
+          class="inline-block text-white text-xl my-0 mx-4 after:block after:pb-2 after:border-b-2 after:border-black after:scale-0 after:transition-all hover:after:scale-75 max-[768px]:hidden"
+          onclick="surClick();"
+          >Surprise</a
+        >
+      </div>
+      <div id="navbar-extra" class="flex min-[768px]:ml-24">
+        <div
+          id="toggle"
+          class="w-11 h-6 bg-gray-100 rounded-3xl mx-4 shadow-2xl mt-1 shadow-inherit"
+        >
+          <div
+            id="indicator"
+            class="animate-pulse scale-90 bg-gray-800 w-6 h-6 rounded-full cursor-pointer"
+          ></div>
+        </div>
+        <div id="hamburger" class="hidden cursor-pointer">
+          <i data-feather="menu" class="h-8 w-8"></i>
+        </div>
+      </div>
+    </nav>
+    <section
+      id="background-web"
+      class="bg-[url('./img/sunrise.jpg')] min-h-screen flex items-center bg-no-repeat bg-cover bg-center relative"
+    >
+      <div
+        id="home"
+        class="m-auto w-11/12 h-96 bg-black bg-opacity-25 backdrop-blur-lg rounded-xl drop-shadow-lg min-[768px]:w-4/6 min-[768px]:h-hp font-mono"
+      >
+        <h2
+          id="object1"
+          class="flex text-center justify-center text-2xl font-semibold italic pt-5 text-four drop-shadow-lg min-[768px]:text-4xl h-24 w-auto shadow-lg min-[768px]:h-32"
+        >
+          Happy Birthday<br />Dini!!
+        </h2>
+        <p
+          id="object1"
+          class="flex text-center justify-center font-semibold italic p-1 min-[768px]:text-3xl min-[768px]:p-2 text-lg max-[768px]:mt-1"
+        >
+          Wish You All The Best<i
+            data-feather="heart"
+            class="max-[768px]:p-0.5 text-red-700 p-0 animate-ping"
+          ></i>
+        </p>
+        <div id="image" class="justify-around flex items-start max-[768px]:mt-9">
+          <img
+            id="object1"
+            src="./img/picture.jpg"
+            alt=""
+            class="flex mx-auto h-auto w-auto scale-90 rounded-lg shadow-md min-[768px]:w-hp min-[768px]:h-64 max-[768px]:h-36"
+          />
+          <img
+            id="object1"
+            src="./img/picture1.jpg"
+            alt=""
+            class="flex mx-auto h-auto w-auto scale-90 rounded-lg shadow-md min-[768px]:w-hp min-[768px]:h-64 max-[768px]:h-36"
+          />
+          <img
+            id="object1"
+            src="./img/picture2.jpg"
+            alt=""
+            class="flex mx-auto h-auto w-auto scale-90 rounded-lg shadow-md min-[768px]:w-hp min-[768px]:h-64 max-[768px]:h-36"
+          />
+        </div>
+        <div
+          id="object1"
+          class="w-auto h-auto flex justify-center text-center text-gray-700 text-sm max-[768px]:mt-10"
+        >
+          <p>
+            Created By
+            <a
+              href="https://instagram.com/danurr_h?igshid=YWJhMjlhZTc="
+              target="_blank"
+              class="text-red-500 font-bold hover:text-black"
+            >
+              Danur &copy;</a
+            >
+            2023
+          </p>
+        </div>
+        <div id="pictures" class="hidden w-full h-full">
+          <div id="1" class="min-[768px]:block">
+            <img
+              src="./img/picture1.JPG"
+              alt=""
+              class="flex mx-auto mt-3 h-1/4 w-10/12 scale-90 rounded-lg shadow-md min-[768px]:w-96 min-[768px]:h-52 min-[768px]:mt-0"
+            />
+          </div>
+          <div id="2" class="min-[768px]:grid min-[768px]:grid-cols-3">
+            <img
+              src="./img/picture2.jpg"
+              alt=""
+              class="float-left ml-11 mt-3 h-48 w-28 scale-90 rounded-lg shadow-md min-[768px]:w-40 min-[768px]:h-hpn min-[768px]:mt-0 min-[768px]:ml-44"
+            />
+            <div id="l" class="max-[768px]:hidden">
+              <i
+                data-feather="heart"
+                class="mx-auto mt-24 text-red-600 animate-ping w-16 h-16"
+              ></i>
+            </div>
+            <img
+              src="./img/picture3.jpg"
+              alt=""
+              class="float-right mr-11 mt-3 h-48 w-28 scale-90 rounded-lg shadow-md min-[768px]:w-40 min-[768px]:h-hpn min-[768px]:mt-0 min-[768px]:ml-1"
+            />
+          </div>
+        </div>
+        <div id="song" class="hidden w-full h-full">
+          <video
+            src="./img/hbd.mp4"
+            autoplay loop
+            class="border-double border-three border-8 border-spacing-2 flex mx-auto h-4/6 w-full scale-90 rounded-lg shadow-md my-16 min-[768px]:w-96 min-[768px]:h-52 min-[768px]:my-32 min-[768px]:rounded-lg max-[768px]:my-7"
+          ></video>
+        </div>
+        <div id="surprise" class="hidden m-auto w-full h-96 pt-16">
+          <h2 id="teks" class="flex text-center justify-center font-semibold italic p-1 min-[768px]:text-6xl min-[768px]:p-2 text-lg text-amber-100">
+            Buah nangka buah kedondong, mau ga jadi pacar aku??
+          </h2>
+          <i
+          id="lv"
+            data-feather="heart"
+            class="hidden text-center justify-center m-auto mt-10 max-[768px]:p-0.5 text-red-700 p-0 animate-ping"
+          ></i>
+          <div id="jawab" class="flex justify-around items-start m-auto mt-20">
+            <button id="buttn" class="inline-block text-gray-200 text-6xl font-semibold italic cursor-pointer relative scale-90  rounded-md border-cyan-400 border-4 p-4 max-[768px]:text-xl">GAMAU</button>
+            <button id="butty" onclick="tks()" class="inline-block text-gray-200 text-6xl font-semibold italic cursor-pointer relative scale-90  rounded-md border-cyan-400 border-4 p-4 max-[768px]:text-xl">MAU</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+  <script src="js/script.js"></script>
+</html>
